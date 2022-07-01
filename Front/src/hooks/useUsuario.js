@@ -31,7 +31,7 @@ export const Usuario = () => {
            }
 
            console.log(usuario)
-        await axios.post('http://localhost:5000/book', usuario )
+        await axios.post('http://35.193.82.52:5000/book', usuario )
         .then(response => {
             console.log(response)
      
@@ -54,7 +54,7 @@ export const Usuario = () => {
            }
 
            console.log(usuario)
-        await axios.post('http://localhost:5000/consesionaria/vehiculo/rentar', usuario )
+        await axios.post('http://35.193.82.52:5000/consesionaria/vehiculo/rentar', usuario )
         .then(response => {
             console.log(response)
      
@@ -69,7 +69,7 @@ export const Usuario = () => {
 
     }
     const ReservarHabitacion = async (id_habitacion) => {
-
+console.log("Aca?")
         const usuario ={
             'idUsuario':localusuario.idUsuario,'idHabitacion':id_habitacion
        
@@ -77,7 +77,7 @@ export const Usuario = () => {
            }
 
            console.log(usuario)
-        await axios.post('http://localhost:5000/reservatio/set', usuario )
+        await axios.post('http://35.193.82.52:5000/reservatio/set', usuario )
         .then(response => {
             console.log(response)
      
@@ -95,7 +95,7 @@ export const Usuario = () => {
     const GetServicios = async () => {
 
 
-      await axios.get('http://localhost:5000/services/'+localusuario.idUsuario)
+      await axios.get('http://35.193.82.52:5000/services/'+localusuario.idUsuario)
       .then(response => {
 
    
@@ -127,7 +127,7 @@ export const Usuario = () => {
     
     
     
-        await axios.get('http://localhost:5000/filter')
+        await axios.get('http://35.193.82.52:5000/filter')
           .then(response => {
 
        

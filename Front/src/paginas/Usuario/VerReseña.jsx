@@ -7,7 +7,7 @@ import { UsuarioServicio } from "../../hooks/useUsuarioServicio";
 import { Reseña } from "../../hooks/useReseña";
 
 import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer, Textarea } from "@nextui-org/react";
-import { Navbar } from "../../components/navbar";
+import { BARRA } from "../../components/navbar";
 export const VerReseña = () => {
 
     const [ProductosFiltrados, setProductosFiltrados] = useState([])
@@ -69,7 +69,7 @@ export const VerReseña = () => {
 
         <>
             <div >
-                <Navbar></Navbar>
+                <BARRA></BARRA>
                 <Text
                     h1
                     size={80}

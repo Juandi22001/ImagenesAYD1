@@ -7,7 +7,7 @@ import {BarraServicios} from '../../components/BarraServicios'
 
 
 export const CrearCarros = () => {
-
+    let localusuario = JSON.parse(localStorage.getItem('usuario') || '[]');
   //referencias para jalar los datos del auto
   const nombre = useRef()           //nombre de la empresa de autos
   const marca = useRef()            //marca del auto
@@ -18,7 +18,7 @@ export const CrearCarros = () => {
 
   //metodo para mandar con el backend
   const NuevoCarro = async () => {
-      let auto1 = nombre.current.value
+      let auto1 = localusuario.idUsuario
       let marca1 = marca.current.value
       let modelo1 = modelo.current.value
       let year1 = year.current.value
@@ -54,7 +54,7 @@ export const CrearCarros = () => {
           redirect: 'follow'
       };
 
-      fetch("http://localhost:5000/concesionaria/vehiculo", requesOptions)
+      fetch("http://35.193.82.52:5000/concesionaria/vehiculo", requesOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -78,7 +78,7 @@ export const CrearCarros = () => {
                     Empresa de autos
                     </Form.Label>
                     <Col>
-                    <Form.Control type="text" ref={nombre} />
+                    <Form.Control placeholder={ localusuario.idUsuario} type="text" ref={nombre} />
                     </Col>
                     <Col>
                     </Col>

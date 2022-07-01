@@ -11,14 +11,14 @@ export const Reseña = () => {
 
 
 
-    const GetReseña = async (id) => {
+      const GetReseña = async (id) => {
+ 
 
-
-      await axios.get('http://localhost:5000/review/'+id)
+      await axios.get('http://35.193.82.52:5000/review/'+id)
       .then(response => {
 
    
-       
+        console.log("reseñaaaa",response)
 
         setReseña(response.data.result)
       

@@ -7,11 +7,12 @@ import {BarraServicios} from '../../components/BarraServicios'
 
 
 export const CrearVuelos = () => {
-
+    let localusuario = JSON.parse(localStorage.getItem('usuario') || '[]');
     const [ciudades, setCiudades] = useState([])
 
 
     useEffect(() => {
+        console.log(localusuario.idUsuario)
         var formdata = new FormData();
         var requestOptions = {
             method: 'GET',
@@ -19,7 +20,7 @@ export const CrearVuelos = () => {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:5000/ciudades", requestOptions)
+        fetch("http://35.193.82.52:5000/ciudades", requestOptions)
         .then(response => response.json())
         .then(result => {
             setCiudades(result.ciudades.map(element => element.nombre))
@@ -37,7 +38,7 @@ export const CrearVuelos = () => {
 
   //metodo para mandar con el backend
   const NuevoVuelo = async () => {
-      let aerolinea1 = nombre.current.value
+      let aerolinea1 = localusuario.idUsuario
       let destino1 = destino.current.value
       let asientos1 = asientos.current.value
       let fecha1 = fecha.current.value
@@ -70,7 +71,7 @@ export const CrearVuelos = () => {
           redirect: 'follow'
       };
 
-      fetch("http://localhost:5000/aerolinea/vuelo/crear", requesOptions)
+      fetch("http://35.193.82.52:5000/aerolinea/vuelo/crear", requesOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -94,7 +95,7 @@ export const CrearVuelos = () => {
                     Aerolinea
                     </Form.Label>
                     <Col>
-                    <Form.Control type="text" ref={nombre} />
+                    <Form.Control  placeholder={localusuario.idUsuario} type="text" ref={nombre} />
                     </Col>
                     <Col>
                     </Col>
@@ -132,7 +133,7 @@ export const CrearVuelos = () => {
                     Fecha
                     </Form.Label>
                     <Col>
-                    <Form.Control type="text" ref={fecha} />
+                    <Form.Control placeholder="dd/mm/yy" type="text" ref={fecha} />
                     </Col>
                     <Col>
                     </Col>

@@ -20,7 +20,7 @@ export const useLogin = () => {
 
     console.log(usuario)
 
-   await axios.post('http://localhost:5000/login', usuario )
+   await axios.post('http://35.193.82.52:5000/login', usuario )
    .then(response => {
 
 
@@ -78,7 +78,7 @@ export const useLogin = () => {
     console.log(Nombre, USER,Password,ConfirmarPassword,EDAD,Telefono)
 
 
-    await axios.post('http://localhost:5000/addUser', {Nombre, USER,Password,ConfirmarPassword,EDAD,Telefono})
+    await axios.post('http://35.193.82.52:5000/addUser', {Nombre, USER,Password,ConfirmarPassword,EDAD,Telefono})
       .then(response => {
         console.log(response)
       });

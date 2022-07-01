@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react"
 import { useForm } from "../../hooks/useForm";
 import { Usuario } from "../../hooks/useUsuario";
-import { Navbar } from "../../components/navbar";
+import { BARRA } from "../../components/navbar";
 import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui-org/react";
 export const VerHotel = () => {
 
@@ -134,7 +134,7 @@ export const VerHotel = () => {
 
     <>
       <div >
-        <Navbar></Navbar>
+        <BARRA></BARRA>
         <Text
           h1
           size={80}

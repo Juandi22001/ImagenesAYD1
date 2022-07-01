@@ -7,7 +7,7 @@ import {BarraServicios} from '../../components/BarraServicios'
 
 
 export const CrearHabitaciones = () => {
-
+    let localusuario = JSON.parse(localStorage.getItem('usuario') || '[]');
   //referencias para jalar los datos de la habitacion
   const nombre = useRef()           //nombre del hotel
   const cantidad = useRef()          //cantidad de habitaciones
@@ -16,7 +16,7 @@ export const CrearHabitaciones = () => {
 
   //metodo para mandar con el backend
   const NuevaHabitacion = async () => {
-      let hotel1 = nombre.current.value
+      let hotel1 =localusuario.idUsuario
       let cantidad1 = cantidad.current.value
       let fecha1 = fecha.current.value
       let precio1 = precio.current.value
@@ -46,7 +46,7 @@ export const CrearHabitaciones = () => {
           redirect: 'follow'
       };
 
-      fetch("http://localhost:5000/hotel/rooms", requesOptions)
+      fetch("http://35.193.82.52:5000/hotel/rooms", requesOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -70,7 +70,7 @@ export const CrearHabitaciones = () => {
                     Hotel
                     </Form.Label>
                     <Col>
-                    <Form.Control type="text" ref={nombre} />
+                    <Form.Control placeholder={localusuario.idUsuario} type="text" ref={nombre} />
                     </Col>
                     <Col>
                     </Col>
@@ -90,7 +90,7 @@ export const CrearHabitaciones = () => {
                     Fecha disponibilidad
                     </Form.Label>
                     <Col>
-                    <Form.Control type="text" ref={fecha} />
+                    <Form.Control placeholder="yy-mm-dd" type="text" ref={fecha} />
                     </Col>
                     <Col>
                     </Col>

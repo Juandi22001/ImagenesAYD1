@@ -16,7 +16,7 @@ export const RegistroUsuarios = () => {
             redirect: 'follow'
         };
 
-        fetch("http://localhost:5000/ciudades", requestOptions)
+        fetch("http://35.193.82.52:5000/ciudades", requestOptions)
         .then(response => response.json())
         .then(result => {
             setCiudades(result.ciudades.map(element => element.nombre))
@@ -85,7 +85,7 @@ export const RegistroUsuarios = () => {
           redirect: 'follow'
       };
 
-      fetch("http://localhost:5000/registry", requesOptions)
+      fetch("http://35.193.82.52:5000/registry", requesOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));
@@ -144,7 +144,7 @@ export const RegistroUsuarios = () => {
                     Fecha nacimiento
                     </Form.Label>
                     <Col>
-                    <Form.Control type="text" ref={nacimiento} />
+                    <Form.Control placeholder ="yy-mm-dd"type="text" ref={nacimiento} />
                     </Col>
                     <Col>
                     </Col>

@@ -1,7 +1,7 @@
 import { useForm } from "../../hooks/useForm";
 
 import { Image } from "@nextui-org/react";
-import { Navbar } from "../../components/navbar";
+import { BARRA } from "../../components/navbar";
 import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui-org/react";
 import { useContext, useEffect, useState } from 'react'
 import { Usuario } from "../../hooks/useUsuario";
@@ -40,7 +40,7 @@ export const Perfil = () => {
 
     return (
         <div >
-            <Navbar></Navbar>
+            <BARRA></BARRA>
 
             <div >
                

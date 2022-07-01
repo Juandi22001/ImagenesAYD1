@@ -4,6 +4,7 @@ import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer } from "@nextui
 
 import { useLogin } from '../hooks/useLogin';
 export const Barra = () => {
+    
     const {Salir}=useLogin()
     return(
         <div>

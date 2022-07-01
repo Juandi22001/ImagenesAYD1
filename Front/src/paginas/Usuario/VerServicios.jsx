@@ -4,7 +4,7 @@
 import { useState, useEffect } from "react"
 import { useForm } from "../../hooks/useForm";
 import { UsuarioServicio } from "../../hooks/useUsuarioServicio";
-import { Navbar } from "../../components/navbar";
+import { BARRA } from "../../components/navbar";
 import { Input, Grid, Row, Button, Text, Modal, useModal, Spacer, Textarea } from "@nextui-org/react";
 export const VerServicio = () => {
 
@@ -34,15 +34,19 @@ export const VerServicio = () => {
 
     const Dar_reseña = (id_servicio, servicio) => {
 
+       
+
         if(servicio=="Aereolinea"){
 
             DarReseña(1,id_servicio,values.puntuacion,values.comentario)
         }
-        else if (servicio="Hotel"){
+        else if (servicio=="Hotel"){
+            console.log("adentro de hotel")
             DarReseña(2,id_servicio,values.puntuacion,values.comentario)
 
         }
-        else if(servicio=="Vehiculo"){
+        else if(servicio=="Autos"){
+            console.log("adentro de autos")
             DarReseña(3,id_servicio,values.puntuacion,values.comentario)
 
 
@@ -88,7 +92,7 @@ export const VerServicio = () => {
 
         <>
             <div >
-                <Navbar></Navbar>
+                <BARRA></BARRA>
                 <Text
                     h1
                     size={80}

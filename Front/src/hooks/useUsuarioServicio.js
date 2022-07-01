@@ -26,6 +26,8 @@ export const UsuarioServicio = () => {
     const DarReseña = async (criterio,id_servicio,puntuacion,comentario) => {
         const fecha = new Date();
         console.log("fecha::",fecha.getDate())
+
+        console.log("critero==",criterio,"id_Servicio",id_servicio,"puntuacion",puntuacion,"comentario",comentario)
         const usuario ={
             'criterio':criterio,'id':id_servicio,'puntuacion':puntuacion,'comentario':comentario,'fecha':"2022-04-22"
        
@@ -33,7 +35,7 @@ export const UsuarioServicio = () => {
            }
 
            console.log(usuario)
-        await axios.post('http://localhost:5000/review/set', usuario )
+        await axios.post('http://35.193.82.52:5000/review/set', usuario )
         .then(response => {
             console.log(response)
      
@@ -50,7 +52,7 @@ export const UsuarioServicio = () => {
     const GetServicios = async () => {
 
 
-      await axios.get('http://localhost:5000/services/'+localusuario.idUsuario)
+      await axios.get('http://35.193.82.52:5000/services/'+localusuario.idUsuario)
       .then(response => {
 
    
